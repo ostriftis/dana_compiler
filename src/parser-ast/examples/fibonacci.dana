@@ -1,0 +1,32 @@
+def main
+
+def fib: n as int, result as ref int
+    var a is int
+    var b is int
+    begin
+    if n <= 0:
+      result := 0
+    end
+    if n = 1:
+      result := 1
+    end
+    if n > 1:
+      fib: n-1, a
+      fib: n-2, b
+      result := a + b
+    end
+  end
+
+  var n is int
+  var res is int
+
+  n := readInteger()
+
+  fib: n, res
+
+  writeString: "Fibonacci of "
+  writeInteger: n
+  writeString: " is "
+  writeInteger: res
+  writeString: "\n"
+end

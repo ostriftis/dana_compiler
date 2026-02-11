@@ -1,0 +1,21 @@
+def char1
+
+   def tralala is byte: c as byte, d as ref byte
+      if c > d:
+         return: c
+      else:
+         return: d
+
+   var s is byte[10]
+   var i is int
+
+   i := 0
+   loop:
+     s[i] := shrink(extend('1') + i)
+     i := i + 1
+     if i > 8:
+       s[i] := '\0'
+       break
+   
+   writeChar: tralala("haha"[2], s[1])
+   writeChar: '\n'

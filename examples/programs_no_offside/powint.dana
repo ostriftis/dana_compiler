@@ -1,0 +1,36 @@
+def main
+
+  def powint: base as int, exp as int, mod as int, result as ref int
+    var temp is int
+  begin
+    base := base % mod
+    if exp < 1: begin result := 1 end 
+    else:
+    begin
+      if exp % 2 = 0:
+      begin
+        powint: base, exp / 2, mod, temp
+        result := (temp * temp) % mod
+      end
+      else:
+      begin
+        powint: base, exp - 1, mod, temp
+        result := (base * temp) % mod
+      end
+    end
+  end
+
+  var b   is int
+  var e   is int
+  var m   is int
+  var res is int
+begin
+  b := readInteger()
+  e := readInteger()
+  m := readInteger()
+
+  powint: b, e, m, res
+
+  writeInteger: res
+  writeString: "\n"
+end

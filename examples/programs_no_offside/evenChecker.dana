@@ -1,0 +1,38 @@
+def main
+
+  def even is int: n as int
+    var result is int
+    begin
+      if (n % 2) = 0:
+      begin
+        result := 0  # It's even
+      end
+      else:
+      begin
+        result := 1  # It's odd
+      end
+      return: result
+    end
+
+  var n is int
+  var res is int
+
+  begin
+    writeString: "Enter a number: "
+    n := readInteger()
+
+    res := even(n)
+
+    writeInteger: n
+    writeString: " is "
+    if res = 0:
+    begin
+      writeString: "even!"
+    end
+    else:
+    begin
+      writeString: "odd!"
+    end
+    writeString: "\n"
+  end
+end

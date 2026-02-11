@@ -1,0 +1,14 @@
+def main
+    var x y is int
+begin
+    loop a:
+    begin
+        x := 1
+        loop b:
+        begin
+            y := x + y
+            continue: a
+        end
+        break: a
+    end
+end

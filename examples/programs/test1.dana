@@ -1,0 +1,13 @@
+def main
+
+   def tralala is byte: a as byte, b as ref byte
+      return: a & b
+
+   var a b is byte
+
+   a := true
+   b := false
+   writeByte: a
+   writeByte: b
+   writeByte: tralala(false, a)
+   writeChar: '\n'

@@ -1,0 +1,97 @@
+def main
+
+  def partition is int: arr as int [], low high as int
+    var pivot i j temp is int
+  begin
+    pivot := arr[high]
+    i := low - 1
+    j := low
+    loop:
+      if j < high:  # Fixed: was j > high which is wrong!
+      begin 
+        if arr[j] < pivot:
+        begin
+          i := i + 1
+          # Inline swap
+          temp := arr[i]
+          arr[i] := arr[j]
+          arr[j] := temp
+        end
+        j := j + 1
+      end
+      else: begin break end
+    end
+    # Inline swap for final pivot position
+    temp := arr[i+1]
+    arr[i+1] := arr[high]
+    arr[high] := temp
+    return: (i+1)
+  end
+
+  def quicksort: arr as int [], low high as int
+    var pi is int
+  begin
+    if low < high:
+    begin
+      pi := partition(arr, low, high)
+      quicksort: arr, low, (pi - 1)
+      quicksort: arr, (pi + 1), high
+    end
+  end
+
+  def binarySearch is int: arr as int [], low high x as int
+    var mid l h is int 
+  begin
+    l := low  # Use local copies
+    h := high
+    loop:
+      if l <= h:  # Changed from l > h to l <= h
+      begin 
+        mid := l + (h - l)/2
+        if arr[mid] = x: 
+        begin
+          return: mid
+        end
+        if arr[mid] < x:
+        begin
+          l := mid + 1
+        end
+        else:
+        begin
+          h := mid - 1
+        end
+      end
+      else: begin break end
+    end
+    return: -1
+  end
+
+  var nums is int [100]
+  var size k find is int
+  var result is int
+begin
+  k := 0
+  writeString: "Give size of array: "
+  size := readInteger()
+  writeString: "Give the numbers of the array: "
+  loop:
+    if k < size:
+    begin
+      nums[k] := readInteger()
+      k := k + 1
+    end
+    else:
+    begin
+      break
+    end
+  end
+
+  quicksort: nums, 0, (size - 1)
+  writeString: "Array is now sorted\n"
+  writeString: "Which value should I search for? "
+  find := readInteger()
+  result := binarySearch(nums, 0, (size - 1), find)
+  writeString: "Value is at index: "
+  writeInteger: result
+  writeString: "\n"
+end

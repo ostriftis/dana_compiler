@@ -1,0 +1,4 @@
+def main
+begin
+   writeString: "Hello world!\n"
+end

@@ -1,0 +1,21 @@
+def main
+
+  def aux: i as int
+    var a is int
+    var b is int
+    begin
+      if i < 0:     
+      begin a := -10 end
+      elif i <= 10: begin a := i end
+      else:         begin a := 100 end
+      writeInteger: a
+      writeString: "\n"
+     end
+
+  var i is int
+
+  i := readInteger()
+  
+  aux: i
+
+end

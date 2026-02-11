@@ -1,0 +1,5 @@
+def hello
+   decl writeString: a as byte[]
+begin
+   writeString: "Hello world!\n"
+end

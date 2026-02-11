@@ -1,0 +1,37 @@
+def main
+
+  def fib is int: n as int 
+  begin
+    if n <= 0:        
+    begin 
+      return: 0 
+    end
+    elif n = 1:       
+    begin 
+      return: 1 
+    end
+    else:
+    begin
+      return: fib(n-1) + fib(n-2)
+    end
+  end
+
+  var n is int
+  var out is int
+  begin
+    loop:
+      begin
+        writeString: "Enter a number: "
+        n := readInteger()
+        if n > 0: begin break end 
+        else    : begin writeString: "Invalid Number! Try again.\n" end
+      end
+
+    out := fib(n)
+
+    writeString: "\nFibonacci number is: "
+    writeInteger: out
+    writeString: "\n"
+  
+  end
+end
