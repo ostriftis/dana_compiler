@@ -6,7 +6,7 @@ Compiler for the academic programming language **Dana**, described in the file *
 ## Authors
  
 - **Striftis Georgios** - 03121200
-- **Papadopoulos Charalampos** - 03120199
+- **Papadopoulos Charalampos** - 03120199 (github: https://github.com/harrispapad)
 
 ---
 
