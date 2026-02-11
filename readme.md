@@ -10,19 +10,6 @@ Compiler for the academic programming language **Dana**, described in the file *
 
 ---
 
-## Technical Implementation
-The dc compiler is implemented using a classic multi-pass architecture, leveraging industry-standard tools for high performance and maintainability.
-
-Compiler Pipeline:
-- Lexer (Flex): Performs lexical analysis, converting raw source code into a stream of tokens.
-- Parser (Bison): Performs syntax analysis using an LALR(1) grammar, constructing an Abstract Syntax Tree (AST).
-- Semantic Analyzer: A custom C++ pass that performs type checking, scope resolution, and symbol table management to ensure the Dana program is logically sound.
-- Backend (LLVM): The AST is traversed to generate LLVM IR. This allows the compiler to benefit from LLVM’s powerful optimization passes and cross-platform machine code generation.
-
----
-
-
-
 ## Build Instructions
 
 Build the compiler from within the root directory:
